@@ -18,7 +18,7 @@ GIF](https://gitlab.com/aguslr/multibootusb/raw/master/docs/assets/img/demo.gif
 ## Documentation
 
 Visit the [project's website for more information][website].
-(Again, I am working on getting my own version of the website up and running so that a new and updated version can be made.)
+(Again, this might be a little out of date or atleast not contain information about all there is in this fork)
 
 [grub]: https://www.gnu.org/software/grub/
 [isos]: https://mbusb.aguslr.com/isos.html
