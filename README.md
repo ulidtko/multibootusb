@@ -1,7 +1,7 @@
 # Multiboot USB
 
 <https://mbusb.aguslr.com/>
-Please note that the website has not been updated to the current state of this fork.
+Please note that the website is aguslrs and has not been updated to the current state of **this** fork.
 
 ## About
 
@@ -22,3 +22,6 @@ Visit the [project's website for more information][website].
 [grub]: https://www.gnu.org/software/grub/
 [isos]: https://mbusb.aguslr.com/isos.html
 [website]: https://mbusb.aguslr.com/
+
+## This fork
+This is a fork of aguslrs Multiboot USB, this fork adds more distros and is not quite as dead (I don't work on it every day, but I will still check on it once in a while.)
