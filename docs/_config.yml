@@ -21,6 +21,7 @@ theme: jekyll-theme-minimal
 exclude:
   - Gemfile
   - Gemfile.lock
+  - vendor
 
 # Theme settings
 show_downloads: true
