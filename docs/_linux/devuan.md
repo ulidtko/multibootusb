@@ -46,7 +46,7 @@ layout: default
 [^note1]: Only when data partition is formatted as [ext][]
 
 
-[config]: {{ site.github.repository_url | append: "/tree/master/mbusb.d/" | append: page.cfgdir }}
+[config]: {{ site.github.repository_url | append: "/tree/opensource/mbusb.d/" | append: page.cfgdir }}
 [distrowatch]: https://distrowatch.com/table.php?distribution=devuan
 [wikipedia]: https://en.wikipedia.org/wiki/Devuan
 [ext]: https://en.wikipedia.org/wiki/Extended_file_system

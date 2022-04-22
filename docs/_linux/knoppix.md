@@ -45,7 +45,7 @@ Stack Exchange][bootknoppix]
 - [{{ page.title }} at Wikipedia][wikipedia]
 
 
-[config]: {{ site.github.repository_url | append: "/tree/master/mbusb.d/" | append: page.cfgdir }}
+[config]: {{ site.github.repository_url | append: "/tree/opensource/mbusb.d/" | append: page.cfgdir }}
 [distrowatch]: https://distrowatch.com/table.php?distribution=knoppix
 [wikipedia]: https://en.wikipedia.org/wiki/Knoppix
 [bootknoppix]: https://unix.stackexchange.com/q/102529/102345

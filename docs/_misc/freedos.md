@@ -35,6 +35,6 @@ layout: default
 - [{{ page.title }} at Wikipedia][wikipedia]
 
 
-[config]: {{ site.github.repository_url | append: "/tree/master/mbusb.d/" | append: page.cfgdir }}
+[config]: {{ site.github.repository_url | append: "/tree/opensource/mbusb.d/" | append: page.cfgdir }}
 [memdisk]: http://www.syslinux.org/wiki/index.php?title=MEMDISK
 [wikipedia]: https://en.wikipedia.org/wiki/FreeDOS

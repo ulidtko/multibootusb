@@ -195,7 +195,7 @@ menuentry "Ultimate Boot CD v5.3.6" {
 [opensuse-based]: https://distrowatch.com/search.php?basedon=openSUSE&status=All#simple
 [panticz-mbusb]: http://www.panticz.de/MultiBootUSB
 [pclinuxos-based]: https://distrowatch.com/search.php?basedon=PCLinuxOS&status=All#simple
-[repo]: {{ site.github.repository_url }}/tree/master/mbusb.d
+[repo]: {{ site.github.repository_url }}/tree/opensource/mbusb.d
 [slackware-based]: https://distrowatch.com/search.php?basedon=Slackware&status=All#simple
 [syslinux-include]: http://www.syslinux.org/wiki/index.php?title=SYSLINUX#INCLUDE_filename
 [syslinux]: http://www.syslinux.org/

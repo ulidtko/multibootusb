@@ -62,7 +62,7 @@ logs][issue866183]
 [^note2]: Rename Netboot ISO files (e.g. from `mini.iso` to `debian-8.6.0-i386-mini.iso`).
 
 
-[config]: {{ site.github.repository_url | append: "/tree/master/mbusb.d/" | append: page.cfgdir }}
+[config]: {{ site.github.repository_url | append: "/tree/opensource/mbusb.d/" | append: page.cfgdir }}
 [distrowatch]: https://distrowatch.com/table.php?distribution=debian
 [wikipedia]: https://en.wikipedia.org/wiki/Debian
 [issue724931]: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=724931

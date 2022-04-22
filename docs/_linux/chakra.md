@@ -35,6 +35,6 @@ layout: default
 - [{{ page.title }} at Wikipedia][wikipedia]
 
 
-[config]: {{ site.github.repository_url | append: "/tree/master/mbusb.d/" | append: page.cfgdir }}
+[config]: {{ site.github.repository_url | append: "/tree/opensource/mbusb.d/" | append: page.cfgdir }}
 [distrowatch]: https://distrowatch.com/table.php?distribution=chakra
 [wikipedia]: https://gl.wikipedia.org/wiki/Chakra_GNU/Linux

@@ -42,6 +42,6 @@ layout: default
 - [{{ page.title }} at Wikipedia][wikipedia]
 
 
-[config]: {{ site.github.repository_url | append: "/tree/master/mbusb.d/" | append: page.cfgdir }}
+[config]: {{ site.github.repository_url | append: "/tree/opensource/mbusb.d/" | append: page.cfgdir }}
 [distrowatch]: http://distrowatch.com/table.php?distribution=nst
 [wikipedia]: https://en.wikipedia.org/wiki/Network_Security_Toolkit

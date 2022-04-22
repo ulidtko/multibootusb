@@ -48,6 +48,6 @@ layout: default
 [^note3]: Rename Admin CD ISO files (e.g. from `admincd-amd64.iso` to `gentoo-admincd-amd64.iso`)
 
 
-[config]: {{ site.github.repository_url | append: "/tree/master/mbusb.d/" | append: page.cfgdir }}
+[config]: {{ site.github.repository_url | append: "/tree/opensource/mbusb.d/" | append: page.cfgdir }}
 [distrowatch]: https://distrowatch.com/table.php?distribution=gentoo
 [wikipedia]: https://en.wikipedia.org/wiki/Gentoo_Linux

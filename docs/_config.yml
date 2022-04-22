@@ -5,15 +5,15 @@ description: >
   will allow you to create a pendrive capable of booting different ISO files.
 baseurl: ""
 url: "https://mbusb.aguslr.com"
-repository: aguslr/multibootusb
+repository: ulidtko/multibootusb
 
 # GitHub
 github:
-  owner_name: aguslr
-  owner_url: https://github.com/aguslr
-  repository_url: https://github.com/aguslr/multibootusb
-  tar_url: https://github.com/aguslr/multibootusb/archive/master.tar.gz
-  zip_url: https://github.com/aguslr/multibootusb/archive/master.zip
+  owner_name: ulidtko
+  owner_url: https://github.com/ulidtko
+  repository_url: https://github.com/ulidtko/multibootusb
+  tar_url: https://github.com/ulidtko/multibootusb/archive/opensource.tar.gz
+  zip_url: https://github.com/ulidtko/multibootusb/archive/opensource.zip
 
 # Build settings
 markdown: kramdown

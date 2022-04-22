@@ -42,6 +42,6 @@ layout: default
 [^note1]: Rename image files (e.g. from `M6412690.IMG` to `menuet-6412690.img`)
 
 
-[config]: {{ site.github.repository_url | append: "/tree/master/mbusb.d/" | append: page.cfgdir }}
+[config]: {{ site.github.repository_url | append: "/tree/opensource/mbusb.d/" | append: page.cfgdir }}
 [memdisk]: http://www.syslinux.org/wiki/index.php?title=MEMDISK
 [wikipedia]: https://en.wikipedia.org/wiki/MenuetOS

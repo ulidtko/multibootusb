@@ -15,7 +15,7 @@ layout: default
 If we have Git installed on the system, we can get the files directly from the repository:
 
 ```
-git clone https://github.com/aguslr/multibootusb
+git clone https://github.com/ulidtko/multibootusb
 ```
 
 After this, every time we want to update the files we do:

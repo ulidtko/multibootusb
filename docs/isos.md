@@ -46,7 +46,7 @@ The following table cotains a list of supported [Android][]-based operating syst
   <td markdown="1">
   {% if item.download %}<a href="{{ item.download }}" title="Download"><svg class="icon"><use xlink:href="#dl-icon"/></svg></a>{% endif %}
   {% if item.homepage %}<a href="{{ item.homepage }}" title="Homepage"><svg class="icon"><use xlink:href="#home-icon"/></svg></a>{% endif %}
-  {% if item.cfgdir %}<a href="{{ site.github.repository_url | append: "/tree/master/mbusb.d/" | append: item.cfgdir }}" title="Configuration"><svg class="icon"><use xlink:href="#cfg-icon"/></svg></a>{% endif %}
+  {% if item.cfgdir %}<a href="{{ site.github.repository_url | append: "/tree/opensource/mbusb.d/" | append: item.cfgdir }}" title="Configuration"><svg class="icon"><use xlink:href="#cfg-icon"/></svg></a>{% endif %}
   </td>
   </tr>
   {% endfor %}
@@ -70,7 +70,7 @@ This table cotains a list of supported [Linux][]-based [distributions][distro] (
   <td markdown="1">
   {% if item.download %}<a href="{{ item.download }}" title="Download"><svg class="icon"><use xlink:href="#dl-icon"/></svg></a>{% endif %}
   {% if item.homepage %}<a href="{{ item.homepage }}" title="Homepage"><svg class="icon"><use xlink:href="#home-icon"/></svg></a>{% endif %}
-  {% if item.cfgdir %}<a href="{{ site.github.repository_url | append: "/tree/master/mbusb.d/" | append: item.cfgdir }}" title="Configuration"><svg class="icon"><use xlink:href="#cfg-icon"/></svg></a>{% endif %}
+  {% if item.cfgdir %}<a href="{{ site.github.repository_url | append: "/tree/opensource/mbusb.d/" | append: item.cfgdir }}" title="Configuration"><svg class="icon"><use xlink:href="#cfg-icon"/></svg></a>{% endif %}
   </td>
   </tr>
   {% endfor %}
@@ -94,7 +94,7 @@ This table contains a list of supported [Unix-like][] OS's ({{ site.unix.size }}
   <td markdown="1">
   {% if item.download %}<a href="{{ item.download }}" title="Download"><svg class="icon"><use xlink:href="#dl-icon"/></svg></a>{% endif %}
   {% if item.homepage %}<a href="{{ item.homepage }}" title="Homepage"><svg class="icon"><use xlink:href="#home-icon"/></svg></a>{% endif %}
-  {% if item.cfgdir %}<a href="{{ site.github.repository_url | append: "/tree/master/mbusb.d/" | append: item.cfgdir }}" title="Configuration"><svg class="icon"><use xlink:href="#cfg-icon"/></svg></a>{% endif %}
+  {% if item.cfgdir %}<a href="{{ site.github.repository_url | append: "/tree/opensource/mbusb.d/" | append: item.cfgdir }}" title="Configuration"><svg class="icon"><use xlink:href="#cfg-icon"/></svg></a>{% endif %}
   </td>
   </tr>
   {% endfor %}
@@ -118,7 +118,7 @@ Lastly, this table contains a list of miscellaneous utilities ({{ site.misc.size
   <td markdown="1">
   {% if item.download %}<a href="{{ item.download }}" title="Download"><svg class="icon"><use xlink:href="#dl-icon"/></svg></a>{% endif %}
   {% if item.homepage %}<a href="{{ item.homepage }}" title="Homepage"><svg class="icon"><use xlink:href="#home-icon"/></svg></a>{% endif %}
-  {% if item.cfgdir %}<a href="{{ site.github.repository_url | append: "/tree/master/mbusb.d/" | append: item.cfgdir }}" title="Configuration"><svg class="icon"><use xlink:href="#cfg-icon"/></svg></a>{% endif %}
+  {% if item.cfgdir %}<a href="{{ site.github.repository_url | append: "/tree/opensource/mbusb.d/" | append: item.cfgdir }}" title="Configuration"><svg class="icon"><use xlink:href="#cfg-icon"/></svg></a>{% endif %}
   </td>
   </tr>
   {% endfor %}

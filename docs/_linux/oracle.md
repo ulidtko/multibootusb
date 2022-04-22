@@ -49,7 +49,7 @@ layout: default
 [^note1]: Rename ISO files (e.g. from `V834394-01.iso` to `oracle-linux-7.3-x86_64-dvd.iso`).
 
 
-[config]: {{ site.github.repository_url | append: "/tree/master/mbusb.d/" | append: page.cfgdir }}
+[config]: {{ site.github.repository_url | append: "/tree/opensource/mbusb.d/" | append: page.cfgdir }}
 [distrowatch]: https://distrowatch.com/table.php?distribution=oracle
 [bootopt]: https://rhinstaller.github.io/anaconda/boot-options.html#installation-source
 [wikipedia]: https://en.wikipedia.org/wiki/Oracle_Linux

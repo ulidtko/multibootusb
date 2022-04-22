@@ -41,5 +41,5 @@ layout: default
 [^note1]: Rename ISO files to remove spaces (e.g. from `feren OS x64.iso` to `feren_OS-x64.iso`).
 
 
-[config]: {{ site.github.repository_url | append: "/tree/master/mbusb.d/" | append: page.cfgdir }}
+[config]: {{ site.github.repository_url | append: "/tree/opensource/mbusb.d/" | append: page.cfgdir }}
 [distrowatch]: http://distrowatch.com/table.php?distribution=ferenos

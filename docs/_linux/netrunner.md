@@ -39,7 +39,7 @@ layout: default
 - [{{ page.title }} at Wikipedia][wikipedia]
 
 
-[config]: {{ site.github.repository_url | append: "/tree/master/mbusb.d/" | append: page.cfgdir }}
+[config]: {{ site.github.repository_url | append: "/tree/opensource/mbusb.d/" | append: page.cfgdir }}
 [distrowatch]: https://distrowatch.com/table.php?distribution=netrunner
 [loopback.cfg]: http://www.supergrubdisk.org/wiki/Loopback.cfg
 [wikipedia]: https://en.wikipedia.org/wiki/Netrunner_(operating_system)
