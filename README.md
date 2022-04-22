@@ -1,21 +1,28 @@
-# This fork
+# History of this fork
 
-This is an Extended Support Repository, I wil not work on this actively but PRs are welcome and I will check them and merge them. There is also no guarantee that I will fix issues.
+The origin project is <https://mbusb.aguslr.com/> — the [repo][origin] is now archived.
 
-# Multiboot USB
+[The fork over there][fork-1] claimed to provide Extended Support or whatever — but has
+ignored [my doc-only PR](https://github.com/hackerncoder/multibootusb/pull/47) while merging
+[the next one](https://github.com/hackerncoder/multibootusb/pull/50).
 
-<https://mbusb.aguslr.com/>
+Having had to dig this out a few times, I got tired of rediscovering the forks every time
+all over again. Not the most googleable name, y'know. Time for it to live in my space.
+
+PRs welcome. Reviewed on volunteer basis.
 
 ## About
 
-This is a project that contains a collection of [GRUB][] files and scripts that
-will allow you to create a pendrive capable of booting [different ISO
-files][isos].
+This is a collection of [GRUB][] scripts that allows to create a pendrive (USB dongle, flash stick)
+capable of booting [a number of][isos] different OS images.
 
-![Demo
-GIF](https://gitlab.com/aguslr/multibootusb/raw/master/docs/assets/img/demo.gif
-"Demo")
+Basically, you run the `./makeUSB.sh` — then drop the liveCD/liveUSB ISO you have into a *subdir*,
+*simply as a file* (no Rufus/`dd`/`usbcreator` or whatnot is required — simply copy the iso file),
+and then can boot it:
 
+![Demo GIF](docs/assets/img/demo.gif)
+
+Both UEFI and Legacy PC BIOS boot modes are supported with `--hybrid --efi`.
 
 ## Documentation
 
@@ -24,3 +31,5 @@ Visit the [project's website for more information][website].
 [grub]: https://www.gnu.org/software/grub/
 [isos]: https://mbusb.aguslr.com/isos.html
 [website]: https://mbusb.aguslr.com/
+[origin]: https://github.com/aguslr/multibootusb
+[fork-1]: https://github.co/hackerncoder/multibootusb
