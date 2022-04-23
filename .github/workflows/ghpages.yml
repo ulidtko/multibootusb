@@ -61,7 +61,10 @@ jobs:
           ### Flags accepted can be found here https://jekyllrb.com/docs/configuration/options/#build-command-options
 
       - name: Debug
-        run: ls -l docs/_site
+        run: |
+          pwd
+          ls -l docs/_site || :
+          ls -l $HOME/work/multibootusb{,/multibootusb} || :
 
       - name: 🚀 deploy
         uses: peaceiris/actions-gh-pages@v3
