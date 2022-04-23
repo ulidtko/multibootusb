@@ -5,8 +5,8 @@ description: >
   (USB dongle, flash stick) supporting a number of different OS images.
   Simply copy ISO files under `/iso-imgs`.
   Both UEFI and Legacy BIOS boot modes can be enabled simultaneously.
-baseurl: ""
-url: "https://mbusb.aguslr.com"
+baseurl: /multibootusb/
+url: https://ulidtko.github.io/multibootusb/
 repository: ulidtko/multibootusb
 
 # GitHub

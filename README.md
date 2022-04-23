@@ -29,7 +29,7 @@ Both UEFI and Legacy PC BIOS boot modes are supported with `--hybrid --efi`.
 Visit the [project's website for more information][website].
 
 [grub]: https://www.gnu.org/software/grub/
-[isos]: https://mbusb.aguslr.com/isos.html
-[website]: https://mbusb.aguslr.com/
+[isos]: https://ulidtko.github.io/multibootusb/isos.html
+[website]: https://ulidtko.github.io/multibootusb/
 [origin]: https://github.com/aguslr/multibootusb
 [fork-1]: https://github.co/hackerncoder/multibootusb
