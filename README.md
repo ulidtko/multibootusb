@@ -1,3 +1,5 @@
+[![Jekyll build](https://github.com/ulidtko/multibootusb/actions/workflows/ghpages.yml/badge.svg)](https://github.com/ulidtko/multibootusb/actions?query=workflow:ghpages)
+
 # History of this fork
 
 The origin project is <https://mbusb.aguslr.com/> — the [repo][origin] is now archived.
