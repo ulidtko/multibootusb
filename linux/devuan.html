@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Devuan - MultiBoot USB</title>
+		<meta
+			name="description"
+			content="This is a collection of GRUB scripts that allows to create a bootable pendrive (USB dongle, flash stick) supporting a number of different OS images. Simply c..."
+		/>
+
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+		<link rel="stylesheet" href="/assets/css/style.css?v=" />
+		<meta name="viewport" content="width=device-width" />
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<a class="home" href="https://mbusb.aguslr.com"><p>MultiBoot USB</p></a>
+				<p>
+					This is a collection of GRUB scripts that allows to create a bootable
+					pendrive (USB dongle, flash stick) supporting a number of different OS
+					images. Simply copy ISO files under `/iso-imgs`. Both UEFI and Legacy
+					BIOS boot modes can be enabled simultaneously.
+				</p>
+
+				<ul>
+					<li>
+						<a
+							href="https://github.com/ulidtko/multibootusb/archive/opensource.zip"
+							>Download <strong>ZIP File</strong></a
+						>
+					</li>
+					<li>
+						<a
+							href="https://github.com/ulidtko/multibootusb/archive/opensource.tar.gz"
+							>Download <strong>TAR Ball</strong></a
+						>
+					</li>
+					<li>
+						<a href="https://github.com/ulidtko/multibootusb"
+							>View On <strong>GitHub</strong></a
+						>
+					</li>
+				</ul>
+			</header>
+			<section>
+				<h1 id="devuan">Devuan</h1>
+
+				<blockquote>
+					<p>
+						Devuan GNU+Linux is a Linux distribution forked from Debian in 2015.
+						The project’s primary goal is to provide a variant of Debian without
+						the complexities and dependencies of systemd, an init system and
+						services manager originally developed by Red Hat and later adopted
+						by most other Linux distributions. Devuan’s initial beta release was
+						made available in April 2016, together with an upgrade path from
+						Debian 7.0 “Wheezy” and a possibility to switch to Devuan from
+						Debian 8.0 “Jessie”. The distribution adopted Xfce as its default
+						desktop.
+					</p>
+
+					<p>
+						–
+						<cite
+							><a href="https://distrowatch.com/table.php?distribution=devuan"
+								>DistroWatch</a
+							></cite
+						>
+					</p>
+				</blockquote>
+
+				<h2 id="configuration">Configuration</h2>
+
+				<ul>
+					<li>
+						<a
+							href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/devuan.d"
+							>Project’s files for Devuan</a
+						>
+					</li>
+				</ul>
+
+				<h2 id="supported-releases">Supported releases</h2>
+
+				<ul>
+					<li>Desktop Live ISO</li>
+					<li>
+						Minimal Live ISO<sup id="fnref:note1" role="doc-noteref"
+							><a href="#fn:note1" class="footnote" rel="footnote">1</a></sup
+						>
+					</li>
+				</ul>
+
+				<h2 id="links">Links</h2>
+
+				<ul>
+					<li><a href="https://devuan.org/">Official homepage</a></li>
+					<li>
+						<a href="https://files.devuan.org/">Official download page</a>
+					</li>
+					<li>
+						<a href="https://distrowatch.com/table.php?distribution=devuan"
+							>Devuan at DistroWatch</a
+						>
+					</li>
+					<li>
+						<a href="https://en.wikipedia.org/wiki/Devuan"
+							>Devuan at Wikipedia</a
+						>
+					</li>
+				</ul>
+
+				<h2 id="notes">Notes</h2>
+
+				<div class="footnotes" role="doc-endnotes">
+					<ol>
+						<li id="fn:note1" role="doc-endnote">
+							<p>
+								Only when data partition is formatted as
+								<a href="https://en.wikipedia.org/wiki/Extended_file_system"
+									>ext</a
+								> <a
+									href="#fnref:note1"
+									class="reversefootnote"
+									role="doc-backlink"
+									>&#8617;</a
+								>
+							</p>
+						</li>
+					</ol>
+				</div>
+			</section>
+			<footer>
+				<p>
+					<small
+						>Hosted on GitHub Pages &mdash; Theme by
+						<a href="https://github.com/orderedlist">orderedlist</a></small
+					>
+				</p>
+			</footer>
+		</div>
+		<script src="/assets/js/scale.fix.js"></script>
+	</body>
+</html>

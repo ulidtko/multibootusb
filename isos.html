@@ -1,0 +1,2710 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>List of supported files - MultiBoot USB</title>
+		<meta
+			name="description"
+			content="This is a collection of GRUB scripts that allows to create a bootable pendrive (USB dongle, flash stick) supporting a number of different OS images. Simply c..."
+		/>
+
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+		<link rel="stylesheet" href="/assets/css/style.css?v=" />
+		<meta name="viewport" content="width=device-width" />
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<a class="home" href="https://mbusb.aguslr.com"><p>MultiBoot USB</p></a>
+				<p>
+					This is a collection of GRUB scripts that allows to create a bootable
+					pendrive (USB dongle, flash stick) supporting a number of different OS
+					images. Simply copy ISO files under `/iso-imgs`. Both UEFI and Legacy
+					BIOS boot modes can be enabled simultaneously.
+				</p>
+
+				<ul>
+					<li>
+						<a
+							href="https://github.com/ulidtko/multibootusb/archive/opensource.zip"
+							>Download <strong>ZIP File</strong></a
+						>
+					</li>
+					<li>
+						<a
+							href="https://github.com/ulidtko/multibootusb/archive/opensource.tar.gz"
+							>Download <strong>TAR Ball</strong></a
+						>
+					</li>
+					<li>
+						<a href="https://github.com/ulidtko/multibootusb"
+							>View On <strong>GitHub</strong></a
+						>
+					</li>
+				</ul>
+			</header>
+			<section>
+				<h1 id="list-of-supported-files">List of supported files</h1>
+
+				<ul id="markdown-toc">
+					<li>
+						<a
+							href="#list-of-supported-files"
+							id="markdown-toc-list-of-supported-files"
+							>List of supported files</a
+						>
+						<ul>
+							<li><a href="#android" id="markdown-toc-android">Android</a></li>
+							<li><a href="#linux" id="markdown-toc-linux">Linux</a></li>
+							<li><a href="#unix" id="markdown-toc-unix">Unix</a></li>
+							<li><a href="#misc" id="markdown-toc-misc">Misc</a></li>
+						</ul>
+					</li>
+				</ul>
+
+				<p>
+					These are <a href="https://en.wikipedia.org/wiki/ISO_image">ISO</a> or
+					<a href="https://en.wikipedia.org/wiki/Kernel_(operating_system)"
+						>kernel</a
+					>
+					utilities that can either boot a
+					<a href="https://en.wikipedia.org/wiki/Live_CD">LiveCD</a> or allow
+					for the installation of the OS onto a hard drive.
+				</p>
+
+				<svg style="display: none" xmlns="http://www.w3.org/2000/svg">
+					<symbol id="cfg-icon" viewBox="0 0 24 24">
+						<path
+							d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+						/>
+					</symbol>
+				</svg>
+				<svg style="display: none" xmlns="http://www.w3.org/2000/svg">
+					<symbol id="dl-icon" viewBox="0 0 24 24">
+						<path d="M3 17v3a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-3" />
+						<polyline points="8 12 12 16 16 12" />
+						<line x1="12" y1="2" x2="12" y2="16" />
+					</symbol>
+				</svg>
+				<svg style="display: none" xmlns="http://www.w3.org/2000/svg">
+					<symbol id="home-icon" viewBox="0 0 24 24">
+						<circle cx="12" cy="12" r="10" />
+						<line x1="2" y1="12" x2="22" y2="12" />
+						<path
+							d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+						/>
+					</symbol>
+				</svg>
+
+				<h2 id="android">Android</h2>
+
+				<p>
+					The following table cotains a list of supported
+					<a href="https://en.wikipedia.org/wiki/Android_(operating_system)"
+						>Android</a
+					>-based operating systems (2 items):
+				</p>
+
+				<table class="item-list">
+					<tbody>
+						<tr>
+							<td>
+								<p><a href="/android/android.html">Android-x86</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="http://www.android-x86.org/download" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://www.android-x86.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/android.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/android/remixos.html">Remix OS</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="https://sourceforge.net/projects/remix-os/files/"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://www.jide.com/remixos-for-pc" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/remixos.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h2 id="linux">Linux</h2>
+
+				<p>
+					This table cotains a list of supported
+					<a href="https://en.wikipedia.org/wiki/Linux">Linux</a>-based
+					<a href="https://en.wikipedia.org/wiki/Linux_distribution"
+						>distributions</a
+					>
+					(86 items):
+				</p>
+
+				<table class="item-list">
+					<tbody>
+						<tr>
+							<td>
+								<p><a href="/linux/anarchy-linux.html">Anarchy-Linux</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://anarchy-linux.org/download/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://anarchy-linux.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/anarchy-linux.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/antergos.html">Antergos</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://www.antergos.com/try-it/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://antergos.com/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/antergos.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/antix.html">antiX</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="http://antix.mepis.org/index.php?title=Main_Page#Downloads"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://antix.mepis.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/antix.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/apricityos.html">Apricity OS</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://apricityos.com/download" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://apricityos.com/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/apricityos.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/arch-anywhere.html">Arch-Anywhere</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://arch-anywhere.org/download/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://arch-anywhere.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/arch-anywhere.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/archbang.html">ArchBang Linux</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="https://sourceforge.net/projects/archbang/files/"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://www.archbang.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/archbang.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/archlabs.html">ArchLabs</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="https://archlabslinux.com/get-archlabs-2/"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://archlabslinux.com/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/archlabs.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/archlinux.html">Arch Linux</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://www.archlinux.org/download/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://www.archlinux.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/archlinux.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/archstrike.html">ArchStrike</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://archstrike.org/downloads" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://archstrike.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/archstrike.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/backbox.html">BackBox</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://www.backbox.org/downloads" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://backbox.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/backbox.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/blackarch.html">BlackArch Linux</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="https://blackarch.org/downloads.html"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://blackarch.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/blackarch.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/bodhi.html">Bodhi Linux</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="http://www.bodhilinux.com/download/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://www.bodhilinux.com/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/bodhi.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/bunsenlabs.html">BunsenLabs Linux</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="https://www.bunsenlabs.org/installation.html"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://www.bunsenlabs.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/bunsenlabs.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/byzantium.html">Byzantium</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="http://project-byzantium.org/download/"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://project-byzantium.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/byzantium.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/centos.html">CentOS</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://wiki.centos.org/Download" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://www.centos.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/centos.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/chakra.html">Chakra Linux</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://www.chakralinux.org/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://www.chakralinux.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/chakra.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/coreos.html">CoreOS</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="https://coreos.com/docs/running-coreos/platforms/iso/"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://coreos.com" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/coreos.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/debian.html">Debian</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://www.debian.org/CD/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://www.debian.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/debian.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/deepin.html">Deepin</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://www.deepin.org/download/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://www.deepin.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/deepin.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/devuan.html">Devuan</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://files.devuan.org/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://devuan.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/devuan.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/elementaryos.html">elementary OS</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://elementary.io/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://elementary.io/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/elementaryos.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/elive.html">Elive</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="http://www.elivecd.org/download/beta/"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://www.elivecd.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/elive.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/fedora.html">Fedora</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://getfedora.org/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://getfedora.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/fedora.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/ferenos.html">feren OS</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="https://ferenos.weebly.com/get-it.html"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://ferenos.weebly.com/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/ferenos.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/geckolinux.html">GeckoLinux</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="https://geckolinux.github.io/#download"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://geckolinux.github.io/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/gecko.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/gentoo.html">Gentoo Linux</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://www.gentoo.org/downloads/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://www.gentoo.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/gentoo.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/gnewsense.html">gNewSense</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="http://www.gnewsense.org/Main/Download"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://www.gnewsense.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/gnewsense.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/gnustep.html">GNUstep Live CD</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="http://livecd.gnustep.org/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://livecd.gnustep.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/gnustep.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/gparted.html">GParted Live</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="http://gparted.sourceforge.net/download.php"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a
+										href="http://gparted.sourceforge.net/livecd.php"
+										title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/gparted.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/grml.html">Grml Live Linux</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://grml.org/download/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://grml.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/grml.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/kali.html">Kali Linux</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://www.kali.org/downloads/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://www.kali.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/kali.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/kaos.html">KaOS</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://kaosx.us/download/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://kaosx.us/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/kaos.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/kde-neon.html">KDE neon</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://neon.kde.org/download" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://neon.kde.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/kde-neon.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/knoppix.html">KNOPPIX</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="http://www.knopper.net/knoppix-mirrors/index-en.html"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://www.knoppix.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/knoppix.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/korora.html">Korora</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://kororaproject.org/download" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://kororaproject.org" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/korora.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/kubuntu.html">Kubuntu</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://www.kubuntu.org/getkubuntu/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://www.kubuntu.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/kubuntu.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/linuxbbq.html">LinuxBBQ</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="http://sourceforge.net/p/linuxbbq/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://linuxbbq.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/linuxbbq.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/linuxkodachi.html">Linux Kodachi</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="https://www.digi77.com/linux-kodachi/"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a
+										href="https://www.digi77.com/linux-kodachi/"
+										title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/kodachi.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/linuxlite.html">Linux Lite</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="https://www.linuxliteos.com/download.php"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://www.linuxliteos.com/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/linuxlite.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/linuxmint.html">Linux Mint</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://linuxmint.com/download.php" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://linuxmint.com/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/linuxmint.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/lubuntu.html">Lubuntu</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="http://lubuntu.me/downloads/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://lubuntu.me/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/lubuntu.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/manjaro.html">Manjaro Linux</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="http://manjaro.org/get-manjaro/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://manjaro.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/manjaro.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/mauilinux.html">Maui Linux</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://mauilinux.org/download/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://mauilinux.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/maui.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/mx.html">MX Linux</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://mxlinux.org/download-links" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://mxlinux.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/mx.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/netrunner.html">Netrunner</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="http://netrunner.com/download" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://www.netrunner.com/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/netrunner.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/nst.html">Network Security Toolkit</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="https://sourceforge.net/projects/nst/files/"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a
+										href="https://www.networksecuritytoolkit.org/"
+										title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/nst.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/openmandriva.html">OpenMandriva Lx</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="https://www.openmandriva.org/download"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://www.openmandriva.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/openmandriva.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/opensuse.html">openSUSE</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://www.opensuse.org/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://www.opensuse.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/opensuse.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/ophcrack.html">Ophcrack LiveCD</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="http://ophcrack.sourceforge.net/download.php?type=livecd"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://ophcrack.sourceforge.net/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/ophcrack.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/oracle.html">Oracle Linux</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://edelivery.oracle.com/linux" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://www.oracle.com/linux/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/oracle.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p>
+									<a href="/linux/parabola.html">Parabola GNU/Linux-libre</a>
+								</p>
+							</td>
+							<td>
+								<p>
+									<a href="https://parabola.nu/download/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://www.parabola.nu/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/parabola.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/parrot.html">Parrot OS</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="https://www.parrotsec.org/download.fx"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://www.parrotsec.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/parrot.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/parted.html">Parted Magic</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://partedmagic.com/downloads/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://partedmagic.com/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/pmagic.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/pclinuxos.html">PCLinuxOS</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="http://www.pclinuxos.com/get-pclinuxos/"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://www.pclinuxos.com/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/pclinuxos.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/pentoo.html">Pentoo</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="http://www.pentoo.ch/download/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://www.pentoo.ch/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/pentoo.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/peppermint.html">Peppermint</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://peppermintos.com/download" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://peppermintos.com/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/peppermint.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/ploplinux.html">Plop Linux</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="https://www.plop.at/en/ploplinux/downloads/index.html"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a
+										href="https://www.plop.at/en/ploplinux/index.html"
+										title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/ploplinux.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/porteus.html">Porteus</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="http://build.porteus.org/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://www.porteus.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/porteus.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/q4os.html">Q4OS</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://q4os.org/downloads1.html" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://q4os.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/q4os.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/qubesos.html">Qubes OS</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://www.qubes-os.org/downloads/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://www.qubes-os.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/qubesos.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/rancheros.html">RancherOS</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="https://github.com/rancher/os/releases"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://rancher.com/rancher-os/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/rancheros.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/raspixel.html">Raspberry PIXEL</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="https://downloads.raspberrypi.org/pixel_x86/"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a
+										href="https://www.raspberrypi.org/blog/pixel-pc-mac/"
+										title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/pixel.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/redcore.html">Redcore Linux</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="http://mirror.math.princeton.edu/pub/redcorelinux/iso/"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://redcorelinux.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/redcore.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/redhat.html">Red Hat Enterprise Linux</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="https://access.redhat.com/downloads/"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://www.redhat.com/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/rhel.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/rescatux.html">Rescatux</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="https://www.supergrubdisk.org/category/download/rescatuxdownloads/rescatux-beta/"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a
+										href="https://www.supergrubdisk.org/rescatux/"
+										title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/rescatux.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/rfremix.html">RFRemix</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="http://russianfedora.pro/stories/download/"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a
+										href="http://russianfedora.pro/stories/rfremix/"
+										title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/rfremix.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/robolinux.html">RoboLinux</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="https://sourceforge.net/projects/robolinux/files/"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://www.robolinux.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/robolinux.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/rockstor.html">Rockstor</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="http://rockstor.com/download.html" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://rockstor.com/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/rockstor.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/rosa.html">ROSA</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="http://www.rosalinux.com/downloads/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://www.rosalab.com/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/rosa.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/sabayon.html">Sabayon Linux</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="http://www.sabayon.org/download" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://www.sabayon.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/sabayon.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/slackware.html">Slackware Linux</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="http://www.slackware.com/getslack/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://www.slackware.com/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/slackware.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/slax.html">Slax Linux</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="http://www.slax.org/download.php" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://www.slax.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/slax.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/slitaz.html">SliTaz</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="http://www.slitaz.org/en/get/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://www.slitaz.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/slitaz.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/solus.html">Solus</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://getsol.us/download/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://getsol.us/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/solus.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/sparkylinux.html">SparkyLinux</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://sparkylinux.org/download/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://sparkylinux.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/sparkylinux.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/subgraphos.html">Subgraph OS</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://subgraph.com/sgos/download/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://subgraph.com/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/subgraphos.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/systemrescuecd.html">SystemRescueCd</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://www.sysresccd.org/Download" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://www.sysresccd.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/systemrescuecd.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/tails.html">Tails</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="https://tails.boum.org/install/download/"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://tails.boum.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/tails.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/tinycore.html">Tiny Core Linux</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="http://www.tinycorelinux.net/downloads.html"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://tinycorelinux.net/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/tinycore.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/trisquel.html">Trisquel GNU/Linux</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="http://trisquel.info/download" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://trisquel.info/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/trisquel.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/ubuntu.html">Ubuntu</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://www.ubuntu.com/download" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://www.ubuntu.com/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/ubuntu.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/void.html">Void</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="http://www.voidlinux.org/download/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://www.voidlinux.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/void.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/wifislax.html">Wifislax</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="http://www.wifislax.com/category/download/"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://www.wifislax.com/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/wifislax.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/wmlive.html">Window Maker Live</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="https://sourceforge.net/projects/wmlive/files/"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://wmlive.sourceforge.net/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/wmlive.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/xubuntu.html">Xubuntu</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://xubuntu.org/getxubuntu/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://xubuntu.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/xubuntu.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/linux/zorinos.html">Zorin OS</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://zorinos.com/download" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://zorinos.com/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/zorinos.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h2 id="unix">Unix</h2>
+
+				<p>
+					This table contains a list of supported
+					<a href="https://en.wikipedia.org/wiki/Unix-like">Unix-like</a> OS’s
+					(6 items):
+				</p>
+
+				<table class="item-list">
+					<tbody>
+						<tr>
+							<td>
+								<p><a href="/unix/freebsd.html">FreeBSD</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://www.freebsd.org/where.html" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://www.freebsd.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/freebsd.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/unix/freenas.html">FreeNAS</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="http://www.freenas.org/download/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://www.freenas.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/freenas.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/unix/netbsd.html">NetBSD</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://www.netbsd.org/releases/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://www.netbsd.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/netbsd.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/unix/openbsd.html">OpenBSD</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://www.openbsd.org/ftp.html" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://www.openbsd.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/openbsd.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/unix/pfsense.html">pfSense</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://www.pfsense.org/download/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://www.pfsense.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/pfsense.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/unix/smartos.html">SmartOS</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="https://wiki.smartos.org/display/DOC/Download+SmartOS"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://smartos.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/smartos.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h2 id="misc">Misc</h2>
+
+				<p>
+					Lastly, this table contains a list of miscellaneous utilities (21
+					items):
+				</p>
+
+				<table class="item-list">
+					<tbody>
+						<tr>
+							<td>
+								<p><a href="/misc/avg.html">AVG Rescue CD</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="http://www.avg.com/download.prd-arl" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a
+										href="http://www.avg.com/rescue-cd-business-edition"
+										title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/avg.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/misc/avira.html">Avira Rescue System</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="https://www.avira.com/en/download/product/avira-rescue-system"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a
+										href="https://www.avira.com/en/support-download-avira-antivir-rescue-system/product/"
+										title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/avira.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p>
+									<a href="/misc/boot-repair-disk.html">Boot-Repair-Disk</a>
+								</p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="https://sourceforge.net/projects/boot-repair-cd/files/"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a
+										href="https://sourceforge.net/projects/boot-repair-cd/"
+										title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/boot-repair-disk.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p>
+									<a href="/misc/boot.rackspace.com.html">boot.rackspace.com</a>
+								</p>
+							</td>
+							<td>
+								<p>
+									<a href="http://boot.rackspace.com/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://boot.rackspace.com/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/boot.rackspace.com.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/misc/clonezilla.html">Clonezilla Live</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="http://clonezilla.org/downloads.php" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a
+										href="http://clonezilla.org/clonezilla-live.php"
+										title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/clonezilla.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/misc/dban.html">DBAN</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="https://sourceforge.net/projects/dban/files/"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://dban.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/dban.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/misc/f4ubcd.html">FalconFour’s UBCD</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="http://falconfour.com/category/bootcd/"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a
+										href="http://falconfour.com/category/bootcd/"
+										title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/f4ubcd.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/misc/freedos.html">FreeDOS</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="http://www.freedos.org/download/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://www.freedos.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/freedos.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/misc/hirens.html">Hiren’s BootCD</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="http://www.hirensbootcd.org/download/"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://www.hirensbootcd.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/hbcd.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/misc/kolibrios.html">KolibriOS</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="http://kolibrios.org/download" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://kolibrios.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/kolibrios.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/misc/memtest86+.html">Memtest86+</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="http://www.memtest.org/#downiso" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://www.memtest.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/memtest86+.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/misc/memtest86.html">MemTest86</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="https://www.memtest86.com/download.htm"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://www.memtest86.com/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/memtest86.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/misc/menuetos.html">MenuetOS</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="http://www.menuetos.net/download.htm"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://www.menuetos.net/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/menuetos.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/misc/netboot.xyz.html">netboot.xyz</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://netboot.xyz/" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://netboot.xyz/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/netboot.xyz.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/misc/plop.html">Plop Boot Manager</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="https://www.plop.at/en/bootmanager/download.html"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a
+										href="https://www.plop.at/en/bootmanager/index.html"
+										title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/plop.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/misc/reactos.html">ReactOS</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://reactos.org/download" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://reactos.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/reactos.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/misc/redox.html">Redox</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="https://github.com/redox-os/redox/releases"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://www.redox-os.org/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/redox.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/misc/seatools.html">Seagate SeaTools</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="http://www.seagate.com/support/downloads/seatools/"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a
+										href="http://www.seagate.com/support/downloads/seatools/"
+										title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/seatools.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/misc/spinrite.html">SpinRite</a></p>
+							</td>
+							<td>
+								<p>
+									<a href="https://www.grc.com/cs/prepurch.htm" title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="https://www.grc.com/sr/spinrite.htm" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/spinrite.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/misc/supergrub.html">Super Grub2 Disk</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="http://www.supergrubdisk.org/category/download/supergrub2diskdownload/"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a
+										href="http://www.supergrubdisk.org/super-grub2-disk/"
+										title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/supergrub.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<p><a href="/misc/ultimatebcd.html">Ultimate Boot CD</a></p>
+							</td>
+							<td>
+								<p>
+									<a
+										href="http://www.ultimatebootcd.com/download.html"
+										title="Download"
+										><svg class="icon"><use xlink:href="#dl-icon"></use></svg
+									></a>
+									<a href="http://www.ultimatebootcd.com/" title="Homepage"
+										><svg class="icon"><use xlink:href="#home-icon"></use></svg
+									></a>
+									<a
+										href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/ubcd.d"
+										title="Configuration"
+										><svg class="icon"><use xlink:href="#cfg-icon"></use></svg
+									></a>
+								</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			<footer>
+				<p>
+					<small
+						>Hosted on GitHub Pages &mdash; Theme by
+						<a href="https://github.com/orderedlist">orderedlist</a></small
+					>
+				</p>
+			</footer>
+		</div>
+		<script src="/assets/js/scale.fix.js"></script>
+	</body>
+</html>

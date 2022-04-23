@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Preparing the multiboot USB - MultiBoot USB</title>
+		<meta
+			name="description"
+			content="This is a collection of GRUB scripts that allows to create a bootable pendrive (USB dongle, flash stick) supporting a number of different OS images. Simply c..."
+		/>
+
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+		<link rel="stylesheet" href="/assets/css/style.css?v=" />
+		<meta name="viewport" content="width=device-width" />
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<a class="home" href="https://mbusb.aguslr.com"><p>MultiBoot USB</p></a>
+				<p>
+					This is a collection of GRUB scripts that allows to create a bootable
+					pendrive (USB dongle, flash stick) supporting a number of different OS
+					images. Simply copy ISO files under `/iso-imgs`. Both UEFI and Legacy
+					BIOS boot modes can be enabled simultaneously.
+				</p>
+
+				<ul>
+					<li>
+						<a
+							href="https://github.com/ulidtko/multibootusb/archive/opensource.zip"
+							>Download <strong>ZIP File</strong></a
+						>
+					</li>
+					<li>
+						<a
+							href="https://github.com/ulidtko/multibootusb/archive/opensource.tar.gz"
+							>Download <strong>TAR Ball</strong></a
+						>
+					</li>
+					<li>
+						<a href="https://github.com/ulidtko/multibootusb"
+							>View On <strong>GitHub</strong></a
+						>
+					</li>
+				</ul>
+			</header>
+			<section>
+				<h1 id="preparing-the-multiboot-usb">Preparing the multiboot USB</h1>
+
+				<ul id="markdown-toc">
+					<li>
+						<a
+							href="#preparing-the-multiboot-usb"
+							id="markdown-toc-preparing-the-multiboot-usb"
+							>Preparing the multiboot USB</a
+						>
+						<ul>
+							<li>
+								<a
+									href="#getting-the-configuration-files"
+									id="markdown-toc-getting-the-configuration-files"
+									>Getting the configuration files</a
+								>
+								<ul>
+									<li>
+										<a href="#using-git" id="markdown-toc-using-git"
+											>Using Git</a
+										>
+									</li>
+									<li>
+										<a href="#without-git" id="markdown-toc-without-git"
+											>Without Git</a
+										>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a
+									href="#creating-new-usb-drive"
+									id="markdown-toc-creating-new-usb-drive"
+									>Creating new USB drive</a
+								>
+								<ul>
+									<li>
+										<a
+											href="#manually-preparing-the-drive"
+											id="markdown-toc-manually-preparing-the-drive"
+											>Manually preparing the drive</a
+										>
+										<ul>
+											<li>
+												<a
+													href="#creating-a-bootable-usb-drive"
+													id="markdown-toc-creating-a-bootable-usb-drive"
+													>Creating a bootable USB drive</a
+												>
+											</li>
+											<li>
+												<a
+													href="#copying-the-configuration-files-to-the-usb-drive"
+													id="markdown-toc-copying-the-configuration-files-to-the-usb-drive"
+													>Copying the configuration files to the USB drive</a
+												>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a
+											href="#using-the-script"
+											id="markdown-toc-using-the-script"
+											>Using the script</a
+										>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a
+									href="#adding-to-existing-usb-drive"
+									id="markdown-toc-adding-to-existing-usb-drive"
+									>Adding to existing USB drive</a
+								>
+							</li>
+							<li>
+								<a
+									href="#get-bootable-files"
+									id="markdown-toc-get-bootable-files"
+									>Get bootable files</a
+								>
+							</li>
+							<li>
+								<a
+									href="#testing-usb-drive-with-qemu"
+									id="markdown-toc-testing-usb-drive-with-qemu"
+									>Testing USB drive with QEMU</a
+								>
+							</li>
+							<li>
+								<a href="#resources" id="markdown-toc-resources">Resources</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+
+				<h2 id="getting-the-configuration-files">
+					Getting the configuration files
+				</h2>
+
+				<h3 id="using-git">Using Git</h3>
+
+				<p>
+					If we have Git installed on the system, we can get the files directly
+					from the repository:
+				</p>
+
+				<div class="language-shell highlighter-rouge">
+					<div class="highlight">
+						<pre
+							class="highlight"
+						><code>git clone https://github.com/ulidtko/multibootusb
+</code></pre>
+					</div>
+				</div>
+
+				<p>After this, every time we want to update the files we do:</p>
+
+				<div class="language-shell highlighter-rouge">
+					<div class="highlight">
+						<pre
+							class="highlight"
+						><code><span class="nb">cd </span>multibootusb <span class="o">&amp;&amp;</span> git pull
+</code></pre>
+					</div>
+				</div>
+
+				<h3 id="without-git">Without Git</h3>
+
+				<p>
+					If Git is not installed, we can still get the files as long as we have
+					a basic Unix environment available:
+				</p>
+
+				<div class="language-shell highlighter-rouge">
+					<div class="highlight">
+						<pre
+							class="highlight"
+						><code>wget https://github.com/ulidtko/multibootusb/archive/opensource.tar.gz <span class="nt">-O</span> - | <span class="nb">tar</span> <span class="nt">-xzv</span> <span class="nt">--strip-components</span> 1 <span class="nt">--exclude</span><span class="o">={</span>README.md,docs<span class="o">}</span>
+</code></pre>
+					</div>
+				</div>
+
+				<h2 id="creating-new-usb-drive">Creating new USB drive</h2>
+
+				<div class="note">
+					<p>
+						We must have the files for targets <em>i386-pc</em> (e.g. package
+						<em
+							><a href="https://packages.debian.org/search?keywords=grub-pc-bin"
+								>grub-pc-bin</a
+							></em
+						>
+						in Debian/Ubuntu) and <em>x86_64-efi</em> (e.g. package
+						<em
+							><a
+								href="https://packages.debian.org/search?keywords=grub-efi-amd64-bin"
+								>grub-efi-amd64-bin</a
+							></em
+						>
+						in Debian/Ubuntu) available in the system, usually in
+						<code class="language-shell highlighter-rouge">/usr/lib/grub/</code
+						>.
+					</p>
+				</div>
+
+				<h3 id="manually-preparing-the-drive">Manually preparing the drive</h3>
+
+				<h4 id="creating-a-bootable-usb-drive">
+					Creating a bootable USB drive
+				</h4>
+
+				<p>
+					Follow the instructions to create a
+					<a
+						href="https://wiki.archlinux.org/index.php/Multiboot_USB_drive#Hybrid_UEFI_GPT_.2B_BIOS_GPT.2FMBR_boot"
+						>Hybrid UEFI GPT + BIOS GPT/MBR boot</a
+					>
+					from the ArchWiki.
+				</p>
+
+				<h4 id="copying-the-configuration-files-to-the-usb-drive">
+					Copying the configuration files to the USB drive
+				</h4>
+
+				<ol>
+					<li>
+						<p>Set variables to avoid errors:</p>
+
+						<div class="language-shell highlighter-rouge">
+							<div class="highlight">
+								<pre
+									class="highlight"
+								><code> <span class="nb">export </span><span class="nv">mntusb</span><span class="o">=</span>&lt;mountpoint&gt; <span class="nv">partusb</span><span class="o">=</span>&lt;partition&gt;
+</code></pre>
+							</div>
+						</div>
+
+						<p>
+							Where
+							<code class="language-shell highlighter-rouge"
+								>&lt;mountpoint&gt;</code
+							>
+							is any directory you want the partition to be mounted at (e.g.
+							<em>/media/usb</em>), and
+							<code class="language-shell highlighter-rouge"
+								>&lt;partition&gt;</code
+							>
+							is the name of the data partition (e.g. <em>/dev/sdh3</em>). Run
+							<code class="language-shell highlighter-rouge">dmesg</code> to get
+							this information.
+						</p>
+					</li>
+					<li>
+						<p>Mount the data partition:</p>
+
+						<div class="language-shell highlighter-rouge">
+							<div class="highlight">
+								<pre
+									class="highlight"
+								><code> mount <span class="nt">--target</span> <span class="nv">$mntusb</span> <span class="nv">$partusb</span>
+</code></pre>
+							</div>
+						</div>
+					</li>
+					<li>
+						<p>
+							Create a directory named <em>boot</em> to store GRUB’s
+							configuration files and a directory named <em>isos</em> for the
+							kernel/ISO files:
+						</p>
+
+						<div class="language-shell highlighter-rouge">
+							<div class="highlight">
+								<pre
+									class="highlight"
+								><code> <span class="nb">mkdir</span> <span class="nt">-p</span> <span class="nv">$mntusb</span>/boot/<span class="o">{</span>grub/mbusb.d/,isos<span class="o">}</span>
+</code></pre>
+							</div>
+						</div>
+					</li>
+					<li>
+						<p>Copy the necessary GRUB files:</p>
+
+						<div class="language-shell highlighter-rouge">
+							<div class="highlight">
+								<pre
+									class="highlight"
+								><code> <span class="nb">cd </span>multibootusb <span class="o">&amp;&amp;</span> <span class="nb">cp</span> <span class="nt">-rf</span> mbusb.<span class="k">*</span> <span class="nv">$mntusb</span>/boot/grub/
+</code></pre>
+							</div>
+						</div>
+					</li>
+					<li>
+						<p>
+							Copy the provided
+							<code class="language-shell highlighter-rouge">grub.cfg</code>:
+						</p>
+
+						<div class="language-shell highlighter-rouge">
+							<div class="highlight">
+								<pre
+									class="highlight"
+								><code> <span class="nb">cp</span> <span class="nt">-f</span> grub.cfg.example <span class="nv">$mntusb</span>/boot/grub/grub.cfg
+</code></pre>
+							</div>
+						</div>
+					</li>
+					<li>
+						<p>
+							Download
+							<a href="http://www.syslinux.org/wiki/index.php?title=MEMDISK"
+								>MEMDISK</a
+							>
+							from
+							<a href="https://www.kernel.org/pub/linux/utils/boot/syslinux/"
+								>kernel.org</a
+							>:
+						</p>
+
+						<div class="language-shell highlighter-rouge">
+							<div class="highlight">
+								<pre
+									class="highlight"
+								><code> wget <span class="nt">-qO</span> - <span class="s1">'https://mirrors.edge.kernel.org/pub/linux/utils/boot/syslinux/syslinux-6.03.tar.gz'</span> | <span class="nb">tar</span> <span class="nt">-xz</span> <span class="nt">-C</span> <span class="nv">$mntusb</span>/boot/grub/ <span class="nt">--no-same-owner</span> <span class="nt">--strip-components</span> 3 <span class="s1">'syslinux-6.03/bios/memdisk/memdisk'</span>
+</code></pre>
+							</div>
+						</div>
+					</li>
+				</ol>
+
+				<h3 id="using-the-script">Using the script</h3>
+
+				<p>Simply run as root:</p>
+
+				<div class="language-shell highlighter-rouge">
+					<div class="highlight">
+						<pre class="highlight"><code>./makeUSB.sh &lt;device&gt;
+</code></pre>
+					</div>
+				</div>
+
+				<p>
+					Where
+					<code class="language-shell highlighter-rouge">&lt;device&gt;</code>
+					is the name of the USB device (e.g. <em>/dev/sdh</em>). Run
+					<code class="language-shell highlighter-rouge">mount</code> to get
+					this information.
+				</p>
+
+				<p>
+					<strong>WARNING</strong>: This will delete all data in the device, so
+					make sure you pick the right one.
+				</p>
+
+				<p>These are the options for the script:</p>
+
+				<pre><code class="language-null">Script to prepare multiboot USB drive
+Usage: makeUSB.sh [options] device [fs-type] [data-size]
+
+ device                         Device to modify (e.g. /dev/sdb)
+ fs-type                        Filesystem type for the data partition [ext3|ext4|vfat|ntfs]
+ data-size                      Data partition size (e.g. 5G)
+  -b,  --hybrid                 Create a hybrid MBR
+  -c,  --clone                  Clone Git repository on the device
+  -e,  --efi                    Enable EFI compatibility
+  -i,  --interactive            Launch gdisk to create a hybrid MBR
+  -h,  --help                   Display this message
+</code></pre>
+
+				<h2 id="adding-to-existing-usb-drive">Adding to existing USB drive</h2>
+
+				<p>
+					If you already have your own bootable USB drive that uses GRUB to
+					boot, you can simply add the following lines into your custom
+					<code class="language-shell highlighter-rouge">grub.cfg</code>:
+				</p>
+
+				<div class="language-shell highlighter-rouge">
+					<div class="highlight">
+						<pre
+							class="highlight"
+						><code><span class="c"># Load MBUSB configuration</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nt">-e</span> <span class="s2">"</span><span class="nv">$prefix</span><span class="s2">/mbusb.cfg"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+  </span><span class="nb">source</span> <span class="s2">"</span><span class="nv">$prefix</span><span class="s2">/mbusb.cfg"</span>
+<span class="k">fi</span>
+</code></pre>
+					</div>
+				</div>
+
+				<p>
+					And then copy the project’s configuration files to your drive’s GRUB
+					directory:
+				</p>
+
+				<div class="language-shell highlighter-rouge">
+					<div class="highlight">
+						<pre
+							class="highlight"
+						><code><span class="nb">cd </span>multibootusb <span class="o">&amp;&amp;</span> <span class="nb">cp</span> <span class="nt">-rf</span> mbusb.<span class="k">*</span> <span class="nv">$mntusb</span>/boot/grub/
+</code></pre>
+					</div>
+				</div>
+
+				<h2 id="get-bootable-files">Get bootable files</h2>
+
+				<p>
+					Once you have a bootable USB drive, it only remains to copy the
+					bootable files (ISO or kernel) to the pendrive. See the
+					<a href="isos.html">list of supported files</a> for download links and
+					then save them into
+					<code class="language-shell highlighter-rouge"
+						><span class="nv">$mntusb</span>/boot/isos</code
+					>.
+				</p>
+
+				<h2 id="testing-usb-drive-with-qemu">Testing USB drive with QEMU</h2>
+
+				<p>
+					<a href="http://qemu.org/">QEMU</a> provides a virtual environment
+					capable of booting directly from the newly created USB drive.
+				</p>
+
+				<p>
+					In most installations, the <strong>Legacy PC BIOS</strong> mode will
+					work by default with no additional setup, run:
+				</p>
+
+				<div class="language-shell highlighter-rouge">
+					<div class="highlight">
+						<pre
+							class="highlight"
+						><code>qemu-system-x86_64 <span class="nt">-enable-kvm</span> <span class="se">\</span>
+  <span class="nt">-rtc</span> <span class="nv">base</span><span class="o">=</span>localtime <span class="nt">-m</span> 1G <span class="nt">-vga</span> std <span class="se">\</span>
+  <span class="nt">-drive</span> <span class="nv">file</span><span class="o">=</span>&lt;device&gt;,readonly,cache<span class="o">=</span>none,format<span class="o">=</span>raw,if<span class="o">=</span>virtio
+</code></pre>
+					</div>
+				</div>
+
+				<p>
+					Testing <strong>UEFI</strong> boot mode is also possible with an
+					additional firmware called
+					<a href="https://github.com/tianocore/edk2/blob/master/OvmfPkg/README"
+						>Tianocore OVMF</a
+					>
+					(not included with QEMU):
+				</p>
+
+				<div class="language-shell highlighter-rouge">
+					<div class="highlight">
+						<pre
+							class="highlight"
+						><code>qemu-system-x86_64 <span class="nt">-bios</span> /usr/share/ovmf/x64/OVMF.fd <span class="se">\</span>
+  <span class="nt">-rtc</span> <span class="nv">base</span><span class="o">=</span>localtime <span class="nt">-m</span> 1G <span class="nt">-vga</span> std <span class="se">\</span>
+  <span class="nt">-drive</span> <span class="nv">file</span><span class="o">=</span>&lt;device&gt;,readonly,cache<span class="o">=</span>none,format<span class="o">=</span>raw,if<span class="o">=</span>virtio
+</code></pre>
+					</div>
+				</div>
+
+				<p>
+					As usual, substitute
+					<code class="language-shell highlighter-rouge">&lt;device&gt;</code>
+					with the name of the USB device (e.g. <em>/dev/sdh</em>).
+				</p>
+
+				<h2 id="resources">Resources</h2>
+
+				<ul>
+					<li>
+						<a href="http://www.rodsbooks.com/gdisk/hybrid.html">Hybrid MBRs</a>
+					</li>
+					<li>
+						<a
+							href="https://wiki.archlinux.org/index.php/Multiboot_USB_drive#Hybrid_UEFI_GPT_.2B_BIOS_GPT.2FMBR_boot"
+							>Hybrid UEFI GPT + BIOS GPT/MBR boot</a
+						>
+					</li>
+					<li>
+						<a
+							href="https://github.com/Jimmy-Z/grub-iso-boot/blob/master/grub.cfg"
+							>grub.cfg · Jimmy-Z/grub-iso-boot</a
+						>
+					</li>
+					<li>
+						<a href="http://www.rodsbooks.com/gdisk/sgdisk.html"
+							>Man page of SGDISK</a
+						>
+					</li>
+					<li>
+						<a href="http://www.panticz.de/MultiBootUSB"
+							>MultiBoot USB with Grub2 (boot directly from iso files)</a
+						>
+					</li>
+					<li>
+						<a href="https://qemu.weilnetz.de/doc/qemu-doc.html"
+							>QEMU Emulator User Documentation</a
+						>
+					</li>
+					<li>
+						<a href="http://www.supergrubdisk.org/wiki/Loopback.cfg"
+							>Super Grub Disk Wiki - Loopback.cfg</a
+						>
+					</li>
+					<li>
+						<a href="http://www.circuidipity.com/multi-boot-usb.html"
+							>Transform a USB stick into a boot device packing multiple Linux
+							distros</a
+						>
+					</li>
+					<li>
+						<a href="http://www.linux-kvm.org/page/Tuning_KVM"
+							>Tuning KVM - KVM</a
+						>
+					</li>
+					<li>
+						<a
+							href="https://wiki.archlinux.org/index.php/Multiboot_USB_drive#Using_Syslinux_and_memdisk"
+							>Using Syslinux and memdisk</a
+						>
+					</li>
+				</ul>
+			</section>
+			<footer>
+				<p>
+					<small
+						>Hosted on GitHub Pages &mdash; Theme by
+						<a href="https://github.com/orderedlist">orderedlist</a></small
+					>
+				</p>
+			</footer>
+		</div>
+		<script src="/assets/js/scale.fix.js"></script>
+	</body>
+</html>

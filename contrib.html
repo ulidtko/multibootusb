@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Contributing to the project - MultiBoot USB</title>
+		<meta
+			name="description"
+			content="This is a collection of GRUB scripts that allows to create a bootable pendrive (USB dongle, flash stick) supporting a number of different OS images. Simply c..."
+		/>
+
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+		<link rel="stylesheet" href="/assets/css/style.css?v=" />
+		<meta name="viewport" content="width=device-width" />
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<a class="home" href="https://mbusb.aguslr.com"><p>MultiBoot USB</p></a>
+				<p>
+					This is a collection of GRUB scripts that allows to create a bootable
+					pendrive (USB dongle, flash stick) supporting a number of different OS
+					images. Simply copy ISO files under `/iso-imgs`. Both UEFI and Legacy
+					BIOS boot modes can be enabled simultaneously.
+				</p>
+
+				<ul>
+					<li>
+						<a
+							href="https://github.com/ulidtko/multibootusb/archive/opensource.zip"
+							>Download <strong>ZIP File</strong></a
+						>
+					</li>
+					<li>
+						<a
+							href="https://github.com/ulidtko/multibootusb/archive/opensource.tar.gz"
+							>Download <strong>TAR Ball</strong></a
+						>
+					</li>
+					<li>
+						<a href="https://github.com/ulidtko/multibootusb"
+							>View On <strong>GitHub</strong></a
+						>
+					</li>
+				</ul>
+			</header>
+			<section>
+				<h1 id="contributing-to-the-project">Contributing to the project</h1>
+
+				<ul id="markdown-toc">
+					<li>
+						<a
+							href="#contributing-to-the-project"
+							id="markdown-toc-contributing-to-the-project"
+							>Contributing to the project</a
+						>
+						<ul>
+							<li>
+								<a href="#creating-an-issue" id="markdown-toc-creating-an-issue"
+									>Creating an Issue</a
+								>
+								<ul>
+									<li>
+										<a href="#issue-tips" id="markdown-toc-issue-tips"
+											>Issue tips</a
+										>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a
+									href="#submitting-a-pull-request"
+									id="markdown-toc-submitting-a-pull-request"
+									>Submitting a Pull Request</a
+								>
+								<ul>
+									<li>
+										<a
+											href="#pull-request-tips"
+											id="markdown-toc-pull-request-tips"
+											>Pull Request tips</a
+										>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#resources" id="markdown-toc-resources">Resources</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+
+				<p>
+					This project is
+					<a href="https://en.wikipedia.org/wiki/Free_software"
+						>Free Software</a
+					>
+					released under the
+					<a
+						href="https://en.wikipedia.org/wiki/GNU_General_Public_License#Version_3"
+						>GNU General Public License (Version 3)</a
+					>, therefore contributions are encouraged.
+				</p>
+
+				<h2 id="creating-an-issue">Creating an Issue</h2>
+
+				<p>
+					If you find a bug (and you don’t know how to fix it), have trouble
+					following the installation process or have a question/suggestion about
+					the project, go ahead and create an issue.
+				</p>
+
+				<h3 id="issue-tips">Issue tips</h3>
+
+				<ul>
+					<li>
+						Check existing issues, both open and closed, for your problem.
+					</li>
+					<li>
+						Be clear about what your problem is: what was the expected outcome,
+						what happened instead?
+					</li>
+					<li>
+						Include system details like what operating system you’re using and
+						its version.
+					</li>
+					<li>
+						Paste error output or logs in your issue or in a
+						<a href="https://en.wikipedia.org/wiki/Pastebin">pastebin</a>.
+					</li>
+				</ul>
+
+				<h2 id="submitting-a-pull-request">Submitting a Pull Request</h2>
+
+				<p>
+					If you think you can solve the issue or want to
+					<a href="howto.html">add support for another distro</a>, feel free to
+					make a pull request with the code:
+				</p>
+
+				<ol>
+					<li>Fork and clone the repository.</li>
+					<li>
+						Create a new branch:
+						<code class="language-shell highlighter-rouge"
+							>git checkout <span class="nt">-b</span> my-branch-name</code
+						>.
+					</li>
+					<li>Make your change and make sure it works.</li>
+					<li>
+						Push the new branch to your fork:
+						<code class="language-shell highlighter-rouge"
+							>git push <span class="nt">-u</span> origin my-branch-name</code
+						>.
+					</li>
+					<li>Submit a pull request.</li>
+					<li>Wait for your pull request to be reviewed and merged.</li>
+				</ol>
+
+				<h3 id="pull-request-tips">Pull Request tips</h3>
+
+				<ul>
+					<li>
+						Write a
+						<a href="http://chris.beams.io/posts/git-commit/"
+							>good commit message</a
+						>.
+					</li>
+					<li>
+						Keep your change as focused as possible. If there are multiple
+						changes you would like to make that are not dependent upon each
+						other, consider submitting them as separate pull requests.
+					</li>
+				</ul>
+
+				<h2 id="resources">Resources</h2>
+
+				<ul>
+					<li>
+						<a
+							href="https://guides.github.com/activities/contributing-to-open-source/"
+							>Contributing to Open Source on GitHub</a
+						>
+					</li>
+					<li>
+						<a href="http://chris.beams.io/posts/git-commit/"
+							>How to Write a Git Commit Message</a
+						>
+					</li>
+				</ul>
+			</section>
+			<footer>
+				<p>
+					<small
+						>Hosted on GitHub Pages &mdash; Theme by
+						<a href="https://github.com/orderedlist">orderedlist</a></small
+					>
+				</p>
+			</footer>
+		</div>
+		<script src="/assets/js/scale.fix.js"></script>
+	</body>
+</html>

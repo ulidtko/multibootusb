@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Adding support for an ISO - MultiBoot USB</title>
+		<meta
+			name="description"
+			content="This is a collection of GRUB scripts that allows to create a bootable pendrive (USB dongle, flash stick) supporting a number of different OS images. Simply c..."
+		/>
+
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+		<link rel="stylesheet" href="/assets/css/style.css?v=" />
+		<meta name="viewport" content="width=device-width" />
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<a class="home" href="https://mbusb.aguslr.com"><p>MultiBoot USB</p></a>
+				<p>
+					This is a collection of GRUB scripts that allows to create a bootable
+					pendrive (USB dongle, flash stick) supporting a number of different OS
+					images. Simply copy ISO files under `/iso-imgs`. Both UEFI and Legacy
+					BIOS boot modes can be enabled simultaneously.
+				</p>
+
+				<ul>
+					<li>
+						<a
+							href="https://github.com/ulidtko/multibootusb/archive/opensource.zip"
+							>Download <strong>ZIP File</strong></a
+						>
+					</li>
+					<li>
+						<a
+							href="https://github.com/ulidtko/multibootusb/archive/opensource.tar.gz"
+							>Download <strong>TAR Ball</strong></a
+						>
+					</li>
+					<li>
+						<a href="https://github.com/ulidtko/multibootusb"
+							>View On <strong>GitHub</strong></a
+						>
+					</li>
+				</ul>
+			</header>
+			<section>
+				<h1 id="adding-support-for-an-iso">Adding support for an ISO</h1>
+
+				<ul id="markdown-toc">
+					<li>
+						<a
+							href="#adding-support-for-an-iso"
+							id="markdown-toc-adding-support-for-an-iso"
+							>Adding support for an ISO</a
+						>
+						<ul>
+							<li>
+								<a href="#getting-the-iso" id="markdown-toc-getting-the-iso"
+									>Getting the ISO</a
+								>
+							</li>
+							<li>
+								<a href="#methods" id="markdown-toc-methods">Methods</a>
+								<ul>
+									<li>
+										<a
+											href="#using-loopbackcfg"
+											id="markdown-toc-using-loopbackcfg"
+											>Using loopback.cfg</a
+										>
+									</li>
+									<li>
+										<a
+											href="#converting-isolinux-entries"
+											id="markdown-toc-converting-isolinux-entries"
+											>Converting ISOLINUX entries</a
+										>
+									</li>
+									<li>
+										<a href="#using-memdisk" id="markdown-toc-using-memdisk"
+											>Using MEMDISK</a
+										>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#if-nothing-works" id="markdown-toc-if-nothing-works"
+									>If nothing works</a
+								>
+							</li>
+							<li>
+								<a href="#resources" id="markdown-toc-resources">Resources</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+
+				<p>
+					This how-to will explain how we can configure
+					<a href="https://www.gnu.org/software/grub/">GRUB</a> so it can
+					directly boot an
+					<a href="https://en.wikipedia.org/wiki/ISO_image">ISO file</a> for a
+					specific distribution or software utility. There are several ways to
+					achieve this, listed below in order of preference.
+				</p>
+
+				<h2 id="getting-the-iso">Getting the ISO</h2>
+
+				<p>
+					First of all, we’ll need to download the ISO file and mount it so we
+					can access its contents to find out what the best method is:
+				</p>
+
+				<ul>
+					<li>
+						<a
+							href="http://www.howtogeek.com/168137/mount-an-iso-image-in-linux/"
+							>Mounting an ISO file in Linux</a
+						>.
+					</li>
+					<li>
+						<a
+							href="http://www.howtogeek.com/howto/windows-vista/mount-an-iso-image-in-windows-vista/"
+							>Mounting an ISO file in Windows</a
+						>.
+					</li>
+				</ul>
+
+				<h2 id="methods">Methods</h2>
+
+				<div class="note">
+					As a previous step, we should check the home page for the project that
+					created the ISO. They might provide further information on how to boot
+					directly from the ISO file. Also, we should try contacting the
+					project's developers via their support channels to ask for help.
+				</div>
+
+				<h3 id="using-loopbackcfg">Using loopback.cfg</h3>
+
+				<p>
+					Some ISO files include a file named
+					<em
+						><a href="http://www.supergrubdisk.org/wiki/Loopback.cfg"
+							>loopback.cfg</a
+						></em
+					>
+					specifically designed to be read by GRUB. This file should be located
+					in <code class="language-shell highlighter-rouge">/boot/grub/</code>.
+				</p>
+
+				<p>
+					As an example, we can load the
+					<code class="language-shell highlighter-rouge"
+						>/boot/grub/loopback.cfg</code
+					>
+					file for <em>Ubuntu 16.04</em> like so:
+				</p>
+
+				<div class="language-shell highlighter-rouge">
+					<div class="highlight">
+						<pre
+							class="highlight"
+						><code>submenu <span class="s2">"Ubuntu 16.04 -&gt;"</span> <span class="o">{</span>
+  <span class="nv">iso_path</span><span class="o">=</span><span class="s2">"/boot/isos/ubuntu-16.04.1-desktop-i386.iso"</span>
+  <span class="nb">export </span>iso_path
+  search <span class="nt">--set</span><span class="o">=</span>root <span class="nt">--file</span> <span class="s2">"</span><span class="nv">$iso_path</span><span class="s2">"</span>
+  loopback loop <span class="s2">"</span><span class="nv">$iso_path</span><span class="s2">"</span>
+  <span class="nv">root</span><span class="o">=(</span>loop<span class="o">)</span>
+  configfile /boot/grub/loopback.cfg
+  loopback <span class="nt">--delete</span> loop
+<span class="o">}</span>
+</code></pre>
+					</div>
+				</div>
+
+				<h3 id="converting-isolinux-entries">Converting ISOLINUX entries</h3>
+
+				<p>
+					Commonly, when creating a bootable ISO, you’d use
+					<a href="http://www.syslinux.org/wiki/index.php?title=ISOLINUX"
+						>ISOLINUX</a
+					>, which is part of the
+					<a href="http://www.syslinux.org/">SYSLINUX Project</a>, as
+					<a href="https://en.wikipedia.org/wiki/Boot_loader">boot loader</a>.
+				</p>
+
+				<p>
+					The process involves creating a file named
+					<a href="http://www.syslinux.org/wiki/index.php?title=Isolinux.cfg"
+						>isolinux.cfg</a
+					>
+					that contains the menu entries for the boot loader.
+				</p>
+
+				<p>
+					This file is usually located in
+					<code class="language-shell highlighter-rouge">/isolinux/</code> or
+					<code class="language-shell highlighter-rouge">/boot/syslinux/</code>
+					but the location can vary, therefore it’s recommended to search the
+					directory where our ISO is mounted (e.g.
+					<code class="language-shell highlighter-rouge">/mnt/loop</code>) with
+					the following command:
+				</p>
+
+				<div class="language-shell highlighter-rouge">
+					<div class="highlight">
+						<pre
+							class="highlight"
+						><code>find /mnt/loop <span class="nt">-type</span> f <span class="nt">-name</span> <span class="s1">'isolinux.cfg'</span>
+</code></pre>
+					</div>
+				</div>
+
+				<p>
+					However,
+					<code class="language-shell highlighter-rouge">isolinux.cfg</code>
+					usually loads other files via an
+					<a
+						href="http://www.syslinux.org/wiki/index.php?title=SYSLINUX#INCLUDE_filename"
+						>INCLUDE</a
+					>
+					clause. If so, we’ll need to follow these files in order to find the
+					one containing the actual menu entries. Then, we can manually convert
+					the entries from
+					<a href="http://www.syslinux.org/wiki/index.php?title=Isolinux.cfg"
+						>ISOLINUX’s format</a
+					>
+					to
+					<a
+						href="https://www.gnu.org/software/grub/manual/html_node/Multi_002dboot-manual-config.html"
+						>GRUB’s format</a
+					>.
+				</p>
+
+				<p>
+					As an example, these are the menu entries for
+					<em>Debian 8 Live</em> (file
+					<code class="language-shell highlighter-rouge"
+						>/isolinux/live.cfg</code
+					>):
+				</p>
+
+				<pre><code class="language-null">label live-586
+        menu label ^Live (586)
+        menu default
+        linux /live/vmlinuz1
+        initrd /live/initrd1.img
+        append boot=live components quiet splash
+
+label live-586-failsafe
+        menu label ^Live (586 failsafe)
+        linux /live/vmlinuz1
+        initrd /live/initrd1.img
+        append boot=live components memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal
+
+label live-686-pae
+        menu label ^Live (686-pae)
+        linux /live/vmlinuz2
+        initrd /live/initrd2.img
+        append boot=live components quiet splash
+
+label live-686-pae-failsafe
+        menu label ^Live (686-pae failsafe)
+        linux /live/vmlinuz2
+        initrd /live/initrd2.img
+        append boot=live components memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal
+</code></pre>
+
+				<p>Which could be converted as:</p>
+
+				<div class="language-shell highlighter-rouge">
+					<div class="highlight">
+						<pre
+							class="highlight"
+						><code>submenu <span class="s2">"Debian 8 Live -&gt;"</span> <span class="o">{</span>
+  <span class="nv">iso_path</span><span class="o">=</span><span class="s2">"/boot/isos/debian-live-8.7.1-i386-standard.iso"</span>
+  loopback loop <span class="s2">"</span><span class="nv">$iso_path</span><span class="s2">"</span>
+  <span class="nv">root</span><span class="o">=(</span>loop<span class="o">)</span>
+  menuentry <span class="s2">"Live (586)"</span> <span class="o">{</span>
+    linux /live/vmlinuz1 <span class="nv">findiso</span><span class="o">=</span><span class="nv">$iso_path</span> <span class="nv">boot</span><span class="o">=</span>live components quiet splash
+    initrd /live/initrd1.img
+  <span class="o">}</span>
+  menuentry <span class="s2">"Live (586 failsafe)"</span> <span class="o">{</span>
+    linux /live/vmlinuz1 <span class="nv">findiso</span><span class="o">=</span><span class="nv">$iso_path</span> <span class="nv">boot</span><span class="o">=</span>live components memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash <span class="nv">vga</span><span class="o">=</span>normal
+    initrd /live/initrd1.img
+  <span class="o">}</span>
+  menuentry <span class="s2">"Live (686-pae)"</span> <span class="o">{</span>
+    linux /live/vmlinuz2 <span class="nv">findiso</span><span class="o">=</span><span class="nv">$iso_path</span> <span class="nv">boot</span><span class="o">=</span>live components quiet splash
+    initrd /live/initrd2.img
+  <span class="o">}</span>
+  menuentry <span class="s2">"Live (686-pae failsafe)"</span> <span class="o">{</span>
+    linux /live/vmlinuz2 <span class="nv">findiso</span><span class="o">=</span><span class="nv">$iso_path</span> <span class="nv">boot</span><span class="o">=</span>live components memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash <span class="nv">vga</span><span class="o">=</span>normal
+    initrd /live/initrd2.img
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+					</div>
+				</div>
+
+				<p>
+					Notice, however, that we’ve had to add the parameter
+					<code class="language-shell highlighter-rouge"
+						><span class="nv">findiso</span><span class="o">=</span
+						><span class="nv">$iso_path</span></code
+					>
+					so the kernel can mount and access the contents of the ISO during
+					boot. Otherwise the boot process will fail.
+				</p>
+
+				<p>
+					Unfortunately, many distributions use different parameters. Some known
+					examples:
+				</p>
+
+				<table>
+					<thead>
+						<tr>
+							<th>Distributions</th>
+							<th>Parameters</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<a
+									href="https://distrowatch.com/search.php?basedon=Arch&amp;status=All#simple"
+									>Arch-based</a
+								>
+							</td>
+							<td>
+								<code class="language-shell highlighter-rouge"
+									><span class="nv">img_dev</span><span class="o">=</span
+									><span class="nv">$imgdevpath</span>
+									<span class="nv">img_loop</span><span class="o">=</span
+									><span class="nv">$iso_path</span></code
+								>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a
+									href="https://distrowatch.com/search.php?basedon=Debian&amp;status=All#simple"
+									>Debian-based</a
+								>
+							</td>
+							<td>
+								<code class="language-shell highlighter-rouge"
+									><span class="nv">findiso</span><span class="o">=</span
+									><span class="nv">$iso_path</span></code
+								>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a
+									href="https://distrowatch.com/search.php?basedon=Fedora&amp;status=All#simple"
+									>Fedora-based</a
+								>
+							</td>
+							<td>
+								<code class="language-shell highlighter-rouge"
+									>iso-scan/filename<span class="o">=</span
+									><span class="nv">$iso_path</span></code
+								>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a
+									href="https://distrowatch.com/search.php?basedon=Gentoo&amp;status=All#simple"
+									>Gentoo-based</a
+								>
+							</td>
+							<td>
+								<code class="language-shell highlighter-rouge"
+									><span class="nv">isoboot</span><span class="o">=</span
+									><span class="nv">$iso_path</span></code
+								>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a
+									href="https://distrowatch.com/search.php?basedon=openSUSE&amp;status=All#simple"
+									>openSUSE-based</a
+								>
+							</td>
+							<td>
+								<code class="language-shell highlighter-rouge"
+									><span class="nv">isofrom_system</span><span class="o">=</span
+									><span class="nv">$iso_path</span></code
+								>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a
+									href="https://distrowatch.com/search.php?basedon=PCLinuxOS&amp;status=All#simple"
+									>PCLinuxOS-based</a
+								>
+							</td>
+							<td>
+								<code class="language-shell highlighter-rouge"
+									><span class="nv">bootfromiso</span><span class="o">=</span
+									><span class="nv">$iso_path</span></code
+								>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a
+									href="https://distrowatch.com/search.php?basedon=Slackware&amp;status=All#simple"
+									>Slackware-based</a
+								>
+							</td>
+							<td>
+								<code class="language-shell highlighter-rouge"
+									><span class="nv">livemedia</span><span class="o">=</span
+									><span class="nv">$imgdevpath</span>:<span class="nv"
+										>$iso_path</span
+									></code
+								>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a
+									href="https://distrowatch.com/search.php?basedon=Ubuntu&amp;status=All#simple"
+									>Ubuntu-based</a
+								>
+							</td>
+							<td>
+								<code class="language-shell highlighter-rouge"
+									>iso-scan/filename<span class="o">=</span
+									><span class="nv">$iso_path</span></code
+								>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<p>
+					Distributions based on these might work with its corresponding
+					parameter, so it’s a matter of trial and error.
+				</p>
+
+				<h3 id="using-memdisk">Using MEMDISK</h3>
+
+				<p>
+					If the ISO file is relatively small (less than 128MB) or nothing else
+					works, we can try using
+					<a href="http://www.syslinux.org/wiki/index.php?title=MEMDISK"
+						>MEMDISK</a
+					>. With this method, the ISO is loaded directly into memory (as long
+					as the system has enough) which will allow for booting some
+					unsupported ISOs.
+				</p>
+
+				<p>
+					To get MEMDISK’s binary, we can install
+					<a href="http://www.syslinux.org/">SYSLINUX</a> using our system’s
+					package manager, and find it at
+					<code class="language-shell highlighter-rouge"
+						>/usr/lib/syslinux/memdisk</code
+					>
+					or
+					<code class="language-shell highlighter-rouge"
+						>/usr/lib/syslinux/bios/memdisk</code
+					>, depending on our distribution.
+				</p>
+
+				<p>
+					Alternatively, we can download the official
+					<a href="https://en.wikipedia.org/wiki/Tar_(computing)">tarball</a>
+					from
+					<a href="https://www.kernel.org/pub/linux/utils/boot/syslinux/"
+						>kernel.org</a
+					>, in which case, we will find the binary at
+					<code class="language-shell highlighter-rouge"
+						>/bios/memdisk/memdisk</code
+					>.
+				</p>
+
+				<p>
+					As an example, we can load into memory the ISO for
+					<em>DBAN 2.3.0</em> (only 17MB) using this:
+				</p>
+
+				<div class="language-shell highlighter-rouge">
+					<div class="highlight">
+						<pre
+							class="highlight"
+						><code>menuentry <span class="s2">"DBAN 2.3.0"</span> <span class="o">{</span>
+  <span class="nv">iso_path</span><span class="o">=</span><span class="s2">"/boot/isos/dban-2.3.0_i586.iso"</span>
+  linux16 <span class="nv">$prefix</span>/memdisk iso raw
+  initrd16 <span class="nv">$iso_path</span>
+<span class="o">}</span>
+</code></pre>
+					</div>
+				</div>
+
+				<p>
+					If our ISO is bigger than 128MB and we have a 32-bit OS, then we have
+					to increase the maximum memory usage, by adding the parameter
+					<code class="language-shell highlighter-rouge">vmalloc</code> with (at
+					least) the size of the ISO file. For instance, for
+					<em>Ultimate Boot CD v5.3.6</em>:
+				</p>
+
+				<div class="language-shell highlighter-rouge">
+					<div class="highlight">
+						<pre
+							class="highlight"
+						><code>menuentry <span class="s2">"Ultimate Boot CD v5.3.6"</span> <span class="o">{</span>
+  <span class="nv">iso_path</span><span class="o">=</span><span class="s2">"/boot/isos/ubcd536.iso"</span>
+  linux16 <span class="nv">$prefix</span>/memdisk iso raw <span class="nv">vmalloc</span><span class="o">=</span>650M
+  initrd16 <span class="nv">$iso_path</span>
+<span class="o">}</span>
+</code></pre>
+					</div>
+				</div>
+
+				<h2 id="if-nothing-works">If nothing works</h2>
+
+				<ul>
+					<li>
+						Use your favorite search engine to scour the Internet for a
+						solution. Search for <em>“grub loopback”</em> or
+						<em>“grub iso”</em>, followed by the name of the distribution or
+						software utility.
+					</li>
+					<li>
+						Browse the
+						<a
+							href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d"
+							>repository tree</a
+						>
+						and check the existing GRUB configuration files.
+					</li>
+				</ul>
+
+				<h2 id="resources">Resources</h2>
+
+				<ul>
+					<li>
+						<a
+							href="http://www.ultimatebootcd.com/forums/viewtopic.php?p=9108#p9108"
+							>Grub2 loopback ISO support - Ultimate Boot CD</a
+						>
+					</li>
+					<li>
+						<a href="http://www.panticz.de/MultiBootUSB"
+							>MultiBoot USB with Grub2 (boot directly from iso files)</a
+						>
+					</li>
+					<li>
+						<a href="http://www.supergrubdisk.org/wiki/Loopback.cfg"
+							>Super Grub Disk Wiki - Loopback.cfg</a
+						>
+					</li>
+					<li>
+						<a href="http://www.circuidipity.com/multi-boot-usb.html"
+							>Transform a USB stick into a boot device packing multiple Linux
+							distros</a
+						>
+					</li>
+					<li>
+						<a
+							href="https://wiki.archlinux.org/index.php/Multiboot_USB_drive#Using_Syslinux_and_memdisk"
+							>Using Syslinux and memdisk</a
+						>
+					</li>
+				</ul>
+			</section>
+			<footer>
+				<p>
+					<small
+						>Hosted on GitHub Pages &mdash; Theme by
+						<a href="https://github.com/orderedlist">orderedlist</a></small
+					>
+				</p>
+			</footer>
+		</div>
+		<script src="/assets/js/scale.fix.js"></script>
+	</body>
+</html>

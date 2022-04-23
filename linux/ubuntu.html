@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Ubuntu - MultiBoot USB</title>
+		<meta
+			name="description"
+			content="This is a collection of GRUB scripts that allows to create a bootable pendrive (USB dongle, flash stick) supporting a number of different OS images. Simply c..."
+		/>
+
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+		<link rel="stylesheet" href="/assets/css/style.css?v=" />
+		<meta name="viewport" content="width=device-width" />
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<a class="home" href="https://mbusb.aguslr.com"><p>MultiBoot USB</p></a>
+				<p>
+					This is a collection of GRUB scripts that allows to create a bootable
+					pendrive (USB dongle, flash stick) supporting a number of different OS
+					images. Simply copy ISO files under `/iso-imgs`. Both UEFI and Legacy
+					BIOS boot modes can be enabled simultaneously.
+				</p>
+
+				<ul>
+					<li>
+						<a
+							href="https://github.com/ulidtko/multibootusb/archive/opensource.zip"
+							>Download <strong>ZIP File</strong></a
+						>
+					</li>
+					<li>
+						<a
+							href="https://github.com/ulidtko/multibootusb/archive/opensource.tar.gz"
+							>Download <strong>TAR Ball</strong></a
+						>
+					</li>
+					<li>
+						<a href="https://github.com/ulidtko/multibootusb"
+							>View On <strong>GitHub</strong></a
+						>
+					</li>
+				</ul>
+			</header>
+			<section>
+				<h1 id="ubuntu">Ubuntu</h1>
+
+				<blockquote>
+					<p>
+						Ubuntu is a complete desktop Linux operating system, freely
+						available with both community and professional support. The Ubuntu
+						community is built on the ideas enshrined in the Ubuntu Manifesto:
+						that software should be available free of charge, that software
+						tools should be usable by people in their local language and despite
+						any disabilities, and that people should have the freedom to
+						customise and alter their software in whatever way they see fit.
+						“Ubuntu” is an ancient African word, meaning “humanity to others”.
+						The Ubuntu distribution brings the spirit of Ubuntu to the software
+						world.
+					</p>
+
+					<p>
+						–
+						<cite
+							><a href="https://distrowatch.com/table.php?distribution=ubuntu"
+								>DistroWatch</a
+							></cite
+						>
+					</p>
+				</blockquote>
+
+				<h2 id="configuration">Configuration</h2>
+
+				<ul>
+					<li>
+						<a
+							href="https://github.com/ulidtko/multibootusb/tree/opensource/mbusb.d/ubuntu.d"
+							>Project’s files for Ubuntu</a
+						>
+					</li>
+				</ul>
+
+				<h2 id="supported-releases">Supported releases</h2>
+
+				<ul>
+					<li>
+						Desktop ISO (using
+						<a href="http://www.supergrubdisk.org/wiki/Loopback.cfg"
+							>loopback.cfg</a
+						>)
+					</li>
+					<li>
+						Netboot ISO<sup id="fnref:note1" role="doc-noteref"
+							><a href="#fn:note1" class="footnote" rel="footnote">1</a></sup
+						>
+					</li>
+					<li>
+						Server ISO<sup id="fnref:note1:1" role="doc-noteref"
+							><a href="#fn:note1" class="footnote" rel="footnote">1</a></sup
+						>
+					</li>
+				</ul>
+
+				<h2 id="links">Links</h2>
+
+				<ul>
+					<li><a href="https://www.ubuntu.com/">Official homepage</a></li>
+					<li>
+						<a href="https://www.ubuntu.com/download">Official download page</a>
+					</li>
+					<li>
+						<a href="http://cdimage.ubuntu.com/netboot/"
+							>Official download page (Netboot)</a
+						>
+					</li>
+					<li>
+						<a href="https://distrowatch.com/table.php?distribution=ubuntu"
+							>Ubuntu at DistroWatch</a
+						>
+					</li>
+					<li>
+						<a href="https://en.wikipedia.org/wiki/Ubuntu_Linux"
+							>Ubuntu at Wikipedia</a
+						>
+					</li>
+				</ul>
+
+				<h2 id="notes">Notes</h2>
+
+				<div class="footnotes" role="doc-endnotes">
+					<ol>
+						<li id="fn:note1" role="doc-endnote">
+							<p>
+								Rename Netboot ISO files (e.g. from
+								<code class="language-shell highlighter-rouge">mini.iso</code>
+								to
+								<code class="language-shell highlighter-rouge"
+									>ubuntu-16.04.1-mini-i386.iso</code
+								>) <a
+									href="#fnref:note1"
+									class="reversefootnote"
+									role="doc-backlink"
+									>&#8617;</a
+								> <a
+									href="#fnref:note1:1"
+									class="reversefootnote"
+									role="doc-backlink"
+									>&#8617;<sup>2</sup></a
+								>
+							</p>
+						</li>
+					</ol>
+				</div>
+			</section>
+			<footer>
+				<p>
+					<small
+						>Hosted on GitHub Pages &mdash; Theme by
+						<a href="https://github.com/orderedlist">orderedlist</a></small
+					>
+				</p>
+			</footer>
+		</div>
+		<script src="/assets/js/scale.fix.js"></script>
+	</body>
+</html>
