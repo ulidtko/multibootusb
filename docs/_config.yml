@@ -1,8 +1,10 @@
 # Site settings
 title: MultiBoot USB
 description: >
-  This is a project that contains a collection of GRUB files and scripts that
-  will allow you to create a pendrive capable of booting different ISO files.
+  This is a collection of GRUB scripts that allows to create a bootable pendrive
+  (USB dongle, flash stick) supporting a number of different OS images.
+  Simply copy ISO files under `/iso-imgs`.
+  Both UEFI and Legacy BIOS boot modes can be enabled simultaneously.
 baseurl: ""
 url: "https://mbusb.aguslr.com"
 repository: ulidtko/multibootusb
