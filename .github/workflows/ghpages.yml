@@ -60,6 +60,9 @@ jobs:
           ### If you need to specify any Jekyll build options, enable the above input
           ### Flags accepted can be found here https://jekyllrb.com/docs/configuration/options/#build-command-options
 
+      - name: Debug
+        run: ls -l docs/_site
+
       - name: 🚀 deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
