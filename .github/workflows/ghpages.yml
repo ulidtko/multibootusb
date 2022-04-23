@@ -8,19 +8,18 @@ on:
       # specific branch, eg. master or source (if on *.github.io repo)
 
 jobs:
-  jekyll:
+  render-pages:
     runs-on: ubuntu-latest
     steps:
       - name: 📂 git checkout
         uses: actions/checkout@v2
 
-      # - name: 💎 setup ruby
-      #   uses: ruby/setup-ruby@v1
-      #   with:
-      #     ruby-version: 3.1
-      #     # bundler-cache: true
-      #-- GH runner includes Ruby 2.7.0p0 preinstalled:
-      #-- https://github.com/actions/virtual-environments/blob/main/images/linux/Ubuntu2004-Readme.md
+      - name: 💎 setup ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          working-directory: docs
+        #   ruby-version: 3.1
+        #   bundler-cache: true
 
       - name: 🔨 install deps & build site
         uses: limjh16/jekyll-action-ts@v2
